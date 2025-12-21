@@ -8,9 +8,11 @@
 import UIKit
 
 class LoginView: UIView {
+    let stackView = UIStackView()
+    let SignInButton = UIButton()
     let usernameTextField = UITextField()
+    let passwordTextField = UITextField()
 
-    
     override init(frame: CGRect)  {
         super.init(frame: frame)
         style()
@@ -21,29 +23,52 @@ class LoginView: UIView {
         fatalError("init sd Coder has not been impelement ")
     }
     
-    override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200 , height: 200)
-    }
-    
+//    override var intrinsicContentSize: CGSize {
+//        return CGSize(width: 200 , height: 200)
+//    }
+//    
 }
 extension LoginView {
     
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .orange
+        backgroundColor = .secondarySystemBackground
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.spacing = 8
+        
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.placeholder = "Username"
         usernameTextField.delegate = self
+       // usernameTextField.layer.cornerRadius = 5
+        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.placeholder = "Password"
+        passwordTextField.delegate = self
+       // passwordTextField.layer.cornerRadius = 2
+        
+    
+        clipsToBounds = true
+   
         
     }
     
     func layout() {
-        addSubview(usernameTextField)
+        stackView.addArrangedSubview(usernameTextField)
+        
+        stackView.addArrangedSubview(passwordTextField)
+        
+        addSubview(stackView)
+        
+        
         NSLayoutConstraint.activate([
-            usernameTextField.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1 ),
-            usernameTextField.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
-            trailingAnchor.constraint(equalToSystemSpacingAfter: usernameTextField.trailingAnchor, multiplier: 1)
+            stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1 ),
+            stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
+            bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
         ])
+        
+        
         
     }
 }
