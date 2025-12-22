@@ -44,6 +44,7 @@ extension LoginView {
        // usernameTextField.layer.cornerRadius = 5
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.placeholder = "Password"
+        passwordTextField.isSecureTextEntry = true
         passwordTextField.delegate = self
        // passwordTextField.layer.cornerRadius = 2
         
@@ -82,11 +83,7 @@ extension LoginView :UITextFieldDelegate {
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if usernameTextField.text != "" {
-            return true
-        } else {
-            return false
-        }
+      return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
