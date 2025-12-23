@@ -135,9 +135,8 @@ extension LoginViewController {
             SignInButton.configuration?.showsActivityIndicator = true
             print("truee")
             
-        }else {
-            
-     errorMesageLabel.text = "username / password is incorrect"
+        } else {
+            errorMesageLabel.text = "username / password is incorrect"
         }
     }
 }

@@ -36,6 +36,11 @@
 			path = Filles;
 			sourceTree = "<group>";
 		};
+		E5EB182D2EFB06BE00EE98AA /* Onboarding */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,7 @@
 		E534F56E2EF2F09E004DE185 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				E5EB182D2EFB06BE00EE98AA /* Onboarding */,
 				E534F5702EF2F162004DE185 /* Login */,
 				E534F5582EF2EC7D004DE185 /* Filles */,
 			);
@@ -100,6 +106,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				E534F5582EF2EC7D004DE185 /* Filles */,
+				E5EB182D2EFB06BE00EE98AA /* Onboarding */,
 			);
 			name = "Bankey App";
 			packageProductDependencies = (
