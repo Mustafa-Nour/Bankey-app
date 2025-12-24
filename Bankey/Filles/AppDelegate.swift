@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
         //window?.rootViewController = LoginViewController()
-        // window?.rootViewController = OnboardingContainerViewController()
-        window?.rootViewController = OnBoardingViewController()
+        window?.rootViewController = OnboardingContainerViewController()
+        //window?.rootViewController = OnBoardingViewController(heroImageName: "delorean", titleText: "bankey is faster, easier to use, adnd has a brand look and feel ")
         
         return true
     }

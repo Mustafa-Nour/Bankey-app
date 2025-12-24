@@ -13,6 +13,9 @@ class OnBoardingViewController: UIViewController{
     let imageView = UIImageView()
     let Label = UILabel()
     
+    let heroImageName : String
+    let titleText: String
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,24 +24,35 @@ class OnBoardingViewController: UIViewController{
         layout()
     }
     
+    init (heroImageName: String, titleText: String ) {
+        self.heroImageName = heroImageName
+        self.titleText = titleText
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 }
 
 extension OnBoardingViewController {
     func style() {
+        view.backgroundColor = .systemBackground
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 10
+        stackView.spacing = 20
         //image
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "delorean")
+        imageView.image = UIImage(named: heroImageName)
         imageView.layer.cornerRadius = 10
         
         //label
-        
         Label.translatesAutoresizingMaskIntoConstraints = false
         Label.numberOfLines = 0
-        Label.text = "bankey is faster, easier to use, adnd has a brand look and feel "
+        Label.text = titleText
         Label.textAlignment = .center
         Label.font = UIFont.preferredFont(forTextStyle: .title3)
         Label.adjustsFontForContentSizeCategory = true
