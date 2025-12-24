@@ -44,16 +44,15 @@ class OnboardingContainerViewController: UIViewController {
         
         
         // MARK: - adding chiled viewController to a parent view controller
-        
         addChild(pageViewController)
         view.addSubview(pageViewController.view)
         pageViewController.didMove(toParent: self)
-        // MARK: - dataSource (protocol Data Source
+        
+        // MARK: - dataSource (protocol Data Source)
         pageViewController.dataSource = self
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         
         // MARK: -  laying out the view Controller
-        
         NSLayoutConstraint.activate([
             view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
             view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
