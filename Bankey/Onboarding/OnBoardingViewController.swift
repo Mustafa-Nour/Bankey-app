@@ -8,14 +8,18 @@
 import Foundation
 import UIKit
 
+
+
 class OnBoardingViewController: UIViewController{
     let stackView = UIStackView()
     let imageView = UIImageView()
     let Label = UILabel()
     
+    
     let heroImageName : String
     let titleText: String
     
+    // weak reference to avoid the retain Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +42,15 @@ class OnBoardingViewController: UIViewController{
 }
 
 extension OnBoardingViewController {
-    func style() {
+    func style(){
         view.backgroundColor = .systemBackground
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
+        
+        
+
+        
         //image
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -56,6 +64,8 @@ extension OnBoardingViewController {
         Label.textAlignment = .center
         Label.font = UIFont.preferredFont(forTextStyle: .title3)
         Label.adjustsFontForContentSizeCategory = true
+        
+        
         
     }
     

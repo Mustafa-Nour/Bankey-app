@@ -7,12 +7,21 @@
 
 import UIKit
 
+
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
+
 class LoginViewController: UIViewController {
     let titleLabel = UILabel()
     let subTitleLabel = UILabel()
     let loginView = LoginView()
     let SignInButton = UIButton(type: .system)
     let errorMesageLabel = UILabel()
+    
+    // weak reference to avoid retain cycle
+    weak var delegate: LoginViewControllerDelegate?
     
     var usernameText: String? {
         return loginView.usernameTextField.text
@@ -24,7 +33,6 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         style()
         layout()
     }
@@ -131,9 +139,11 @@ extension LoginViewController {
             return
         }
         
-        if usernameText == "mo" && passwordText == "mo" {
+        if usernameText == "Mo" && passwordText == "Mo" {
             SignInButton.configuration?.showsActivityIndicator = true
-            print("truee")
+            delegate?.didLogin()
+           // print("truee")
+           // print("truee")
             
         } else {
             errorMesageLabel.text = "username / password is incorrect"
