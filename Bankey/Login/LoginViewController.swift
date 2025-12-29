@@ -12,6 +12,9 @@ protocol LoginViewControllerDelegate: AnyObject {
     func didLogin()
 }
 
+protocol logoutDelegate : AnyObject {
+   func didlogOut()
+}
 
 class LoginViewController: UIViewController {
     let titleLabel = UILabel()

@@ -40,10 +40,14 @@ extension LoginView {
         
         usernameTextField.translatesAutoresizingMaskIntoConstraints = false
         usernameTextField.placeholder = "Username"
+        usernameTextField.text = "Mo"
         usernameTextField.delegate = self
        // usernameTextField.layer.cornerRadius = 5
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.placeholder = "Password"
+        passwordTextField.text = "Mo"
+        
+        
         passwordTextField.isSecureTextEntry = true
         passwordTextField.delegate = self
        // passwordTextField.layer.cornerRadius = 2
