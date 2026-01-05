@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E533741D2F0B89BF0044B9A4 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533741C2F0B89BF0044B9A4 /* LocalState.swift */; };
 		E534F55E2EF2EC7D004DE185 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F55D2EF2EC7D004DE185 /* LoginViewController.swift */; };
 		E534F5722EF2F1A4004DE185 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F5712EF2F19C004DE185 /* LoginView.swift */; };
 		E5A1098D2F02FF000001B088 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1098C2F02FF000001B088 /* DummyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E533741C2F0B89BF0044B9A4 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		E534F5562EF2EC7D004DE185 /* Bankey App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bankey App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E534F55D2EF2EC7D004DE185 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E534F5712EF2F19C004DE185 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -20,7 +22,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E534F5682EF2EC7E004DE185 /* Exceptions for "Filles" folder in "Bankey App" target */ = {
+		E5F1D3CE2F048E1100ECA235 /* Exceptions for "Filles" folder in "Bankey App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -33,7 +35,7 @@
 		E534F5582EF2EC7D004DE185 /* Filles */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E534F5682EF2EC7E004DE185 /* Exceptions for "Filles" folder in "Bankey App" target */,
+				E5F1D3CE2F048E1100ECA235 /* Exceptions for "Filles" folder in "Bankey App" target */,
 			);
 			path = Filles;
 			sourceTree = "<group>";
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E533741B2F0B898B0044B9A4 /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				E533741C2F0B89BF0044B9A4 /* LocalState.swift */,
+			);
+			path = Utills;
+			sourceTree = "<group>";
+		};
 		E534F54D2EF2EC7D004DE185 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +85,7 @@
 		E534F56E2EF2F09E004DE185 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				E533741B2F0B898B0044B9A4 /* Utills */,
 				E5EB182D2EFB06BE00EE98AA /* Onboarding */,
 				E534F5702EF2F162004DE185 /* Login */,
 				E534F5582EF2EC7D004DE185 /* Filles */,
@@ -168,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E534F5722EF2F1A4004DE185 /* LoginView.swift in Sources */,
+				E533741D2F0B89BF0044B9A4 /* LocalState.swift in Sources */,
 				E5A1098D2F02FF000001B088 /* DummyViewController.swift in Sources */,
 				E534F55E2EF2EC7D004DE185 /* LoginViewController.swift in Sources */,
 			);
@@ -191,6 +203,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -219,6 +232,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

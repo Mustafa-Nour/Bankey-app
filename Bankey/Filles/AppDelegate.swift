@@ -12,9 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let loginViewController = LoginViewController()
-    
     let onboardingContainer = OnboardingContainerViewController()
-    
     let dummyVc = DummyViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
@@ -24,25 +22,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = dummyVc
-
+        window?.rootViewController = onboardingContainer
         //window?.rootViewController = onboardingContainer
-
         return true
     }
-
 }
+
 //login delegate
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
-        print("Did Login")
-        setRootViewController(onboardingContainer)
+        loginViewController.SignInButton.configuration?.showsActivityIndicator = false
+        if LocalState.hasOnboraded {
+            setRootViewController(dummyVc)
+            
+        } else  {
+            setRootViewController(onboardingContainer)
+        }
     }
 }
 
 //onboarding Delegate
 extension AppDelegate: OnboaringContainerControllerDelegate {
     func didFinishOnBoarding() {
+        LocalState.hasOnboraded = true
+        setRootViewController(loginViewController)
         print("Onboarding has finished ")
     }
 }
@@ -57,7 +60,7 @@ extension AppDelegate: logoutDelegate {
 
 extension AppDelegate {
     
-    // this function for smooth transition 
+    // this function for smooth transition
     func setRootViewController(_ vc: UIViewController, animated: Bool = true) {
         guard animated, let window = self.window else  {
             self.window?.rootViewController = vc

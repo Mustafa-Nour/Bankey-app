@@ -145,9 +145,6 @@ extension LoginViewController {
         if usernameText == "Mo" && passwordText == "Mo" {
             SignInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
-           // print("truee")
-           // print("truee")
-            
         } else {
             errorMesageLabel.text = "username / password is incorrect"
         }
