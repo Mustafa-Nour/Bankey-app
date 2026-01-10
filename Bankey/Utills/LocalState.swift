@@ -26,6 +26,7 @@ class LocalState {
                 newValue,
                 forKey: keys.hasOnboarded.rawValue
             )
+            // MARK: -  deprecated (apple now manage the race byond ther scene )
             UserDefaults.standard.synchronize()
         }
     }

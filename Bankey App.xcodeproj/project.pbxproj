@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E504EF582F124EBA002F8591 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E504EF532F124EBA002F8591 /* AppDelegate.swift */; };
+		E504EF5D2F1251DA002F8591 /* UIViewController+utills.swift in Sources */ = {isa = PBXBuildFile; fileRef = E504EF5C2F1251DA002F8591 /* UIViewController+utills.swift */; };
+		E504EF5F2F1256B9002F8591 /* MainViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = E504EF5E2F1256B9002F8591 /* MainViewController .swift */; };
 		E533741D2F0B89BF0044B9A4 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E533741C2F0B89BF0044B9A4 /* LocalState.swift */; };
 		E534F55E2EF2EC7D004DE185 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F55D2EF2EC7D004DE185 /* LoginViewController.swift */; };
 		E534F5722EF2F1A4004DE185 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E534F5712EF2F19C004DE185 /* LoginView.swift */; };
+		E54950092F1148E3002A5FB6 /* MyStl in Frameworks */ = {isa = PBXBuildFile; productRef = E54950082F1148E2002A5FB6 /* MyStl */; };
 		E5A1098D2F02FF000001B088 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A1098C2F02FF000001B088 /* DummyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E504EF532F124EBA002F8591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E504EF5C2F1251DA002F8591 /* UIViewController+utills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+utills.swift"; sourceTree = "<group>"; };
+		E504EF5E2F1256B9002F8591 /* MainViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController .swift"; sourceTree = "<group>"; };
 		E533741C2F0B89BF0044B9A4 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		E534F5562EF2EC7D004DE185 /* Bankey App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bankey App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E534F55D2EF2EC7D004DE185 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54950092F1148E3002A5FB6 /* MyStl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				E533741C2F0B89BF0044B9A4 /* LocalState.swift */,
+				E504EF5C2F1251DA002F8591 /* UIViewController+utills.swift */,
 			);
 			path = Utills;
 			sourceTree = "<group>";
@@ -69,6 +78,7 @@
 		E534F54D2EF2EC7D004DE185 = {
 			isa = PBXGroup;
 			children = (
+				E504EF5E2F1256B9002F8591 /* MainViewController .swift */,
 				E534F56E2EF2F09E004DE185 /* Bankey */,
 				E534F5572EF2EC7D004DE185 /* Products */,
 			);
@@ -85,9 +95,9 @@
 		E534F56E2EF2F09E004DE185 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				E533741B2F0B898B0044B9A4 /* Utills */,
-				E5EB182D2EFB06BE00EE98AA /* Onboarding */,
+				E504EF532F124EBA002F8591 /* AppDelegate.swift */,
 				E534F5702EF2F162004DE185 /* Login */,
+				E533741B2F0B898B0044B9A4 /* Utills */,
 				E534F5582EF2EC7D004DE185 /* Filles */,
 			);
 			path = Bankey;
@@ -99,6 +109,7 @@
 				E534F55D2EF2EC7D004DE185 /* LoginViewController.swift */,
 				E534F5712EF2F19C004DE185 /* LoginView.swift */,
 				E5A1098C2F02FF000001B088 /* DummyViewController.swift */,
+				E5EB182D2EFB06BE00EE98AA /* Onboarding */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -124,6 +135,7 @@
 			);
 			name = "Bankey App";
 			packageProductDependencies = (
+				E54950082F1148E2002A5FB6 /* MyStl */,
 			);
 			productName = "Bankey App";
 			productReference = E534F5562EF2EC7D004DE185 /* Bankey App.app */;
@@ -153,6 +165,9 @@
 			);
 			mainGroup = E534F54D2EF2EC7D004DE185;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E54950072F1148E2002A5FB6 /* XCLocalSwiftPackageReference "../../../c:c++/MyStl" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E534F5572EF2EC7D004DE185 /* Products */;
 			projectDirPath = "";
@@ -180,8 +195,11 @@
 			files = (
 				E534F5722EF2F1A4004DE185 /* LoginView.swift in Sources */,
 				E533741D2F0B89BF0044B9A4 /* LocalState.swift in Sources */,
+				E504EF582F124EBA002F8591 /* AppDelegate.swift in Sources */,
+				E504EF5D2F1251DA002F8591 /* UIViewController+utills.swift in Sources */,
 				E5A1098D2F02FF000001B088 /* DummyViewController.swift in Sources */,
 				E534F55E2EF2EC7D004DE185 /* LoginViewController.swift in Sources */,
+				E504EF5F2F1256B9002F8591 /* MainViewController .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,6 +407,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E54950072F1148E2002A5FB6 /* XCLocalSwiftPackageReference "../../../c:c++/MyStl" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../../../c:c++/MyStl";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E54950082F1148E2002A5FB6 /* MyStl */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MyStl;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E534F54E2EF2EC7D004DE185 /* Project object */;
 }
