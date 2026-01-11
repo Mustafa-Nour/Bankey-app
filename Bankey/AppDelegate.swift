@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let loginViewController = LoginViewController()
     let onboardingContainer = OnboardingContainerViewController()
     let dummyVc = DummyViewController()
-    let mainViewConteroller = MainViewController()
+    let AccountSummaryVc = AccountSummaryViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         loginViewController.delegate = self
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = .systemBackground
-        window?.rootViewController = mainViewConteroller
+        window?.rootViewController = AccountSummaryVc
         //window?.rootViewController = onboardingContainer
         
         mainViewConteroller.selectedIndex = 1
