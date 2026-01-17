@@ -2,18 +2,28 @@
 //  UIViewController+utills.swift
 //  Bankey App
 //
-//  Created by Mustafa Nour on 10/01/2026.
-//
+
 
 import Foundation
 import UIKit
 
 extension UIViewController {
     func setStatusBar() {
-        let statusBarSize = UIApplication.shared.statusBarFrame.size
-        let frame = CGRect(origin: .zero, size: statusBarSize)
+        // Attempt to get status bar height via the current window scene's statusBarManager (iOS 13+)
+        let statusBarHeight: CGFloat = {
+            if let windowScene = view.window?.windowScene ?? UIApplication.shared.connectedScenes.first as? UIWindowScene,
+               let height = windowScene.statusBarManager?.statusBarFrame.height {
+                return height
+            }
+            return 0
+        }()
+
+        // If height is zero, avoid adding an unnecessary view
+        guard statusBarHeight > 0 else { return }
+
+        let frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: statusBarHeight)
         let statusBarView = UIView(frame: frame)
-        
+        statusBarView.autoresizingMask = [.flexibleWidth, .flexibleBottomMargin]
         statusBarView.backgroundColor = appColor
         view.addSubview(statusBarView)
     }
@@ -24,3 +34,4 @@ extension UIViewController {
         tabBarItem = UITabBarItem(title: title, image: image, tag: 0)
     }
 }
+
