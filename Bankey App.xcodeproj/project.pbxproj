@@ -77,6 +77,7 @@
 		E512176D2F1414D800C806A0 /* AccountSummary */ = {
 			isa = PBXGroup;
 			children = (
+				E512176E2F1414FB00C806A0 /* AccountSummaryViewController.swift */,
 				E56146582F1BFD5100D265E1 /* Cells */,
 				E56146572F1BFD3600D265E1 /* Header */,
 			);
@@ -135,7 +136,6 @@
 		E56146572F1BFD3600D265E1 /* Header */ = {
 			isa = PBXGroup;
 			children = (
-				E512176E2F1414FB00C806A0 /* AccountSummaryViewController.swift */,
 				E58BB0EF2F155B4F00BDE2A9 /* AccountSummaryHeaderView.swift */,
 				E58BB0F12F155B9C00BDE2A9 /* AccountSummaryHeaderView.xib */,
 			);
