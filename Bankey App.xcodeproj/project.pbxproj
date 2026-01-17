@@ -35,7 +35,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E5F1D3CE2F048E1100ECA235 /* Exceptions for "Filles" folder in "Bankey App" target */ = {
+		E56146562F1BEEA400D265E1 /* Exceptions for "Filles" folder in "Bankey App" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -48,12 +48,12 @@
 		E534F5582EF2EC7D004DE185 /* Filles */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E5F1D3CE2F048E1100ECA235 /* Exceptions for "Filles" folder in "Bankey App" target */,
+				E56146562F1BEEA400D265E1 /* Exceptions for "Filles" folder in "Bankey App" target */,
 			);
 			path = Filles;
 			sourceTree = "<group>";
 		};
-		E5EB182D2EFB06BE00EE98AA /* Onboarding */ = {
+		E56146482F1BE97F00D265E1 /* Onboarding */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -95,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E512176D2F1414D800C806A0 /* AccountSummary */,
+				E56146482F1BE97F00D265E1 /* Onboarding */,
 				E534F56E2EF2F09E004DE185 /* Bankey */,
 				E534F5572EF2EC7D004DE185 /* Products */,
 			);
@@ -126,7 +127,6 @@
 				E534F55D2EF2EC7D004DE185 /* LoginViewController.swift */,
 				E534F5712EF2F19C004DE185 /* LoginView.swift */,
 				E5A1098C2F02FF000001B088 /* DummyViewController.swift */,
-				E5EB182D2EFB06BE00EE98AA /* Onboarding */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -148,7 +148,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				E534F5582EF2EC7D004DE185 /* Filles */,
-				E5EB182D2EFB06BE00EE98AA /* Onboarding */,
+				E56146482F1BE97F00D265E1 /* Onboarding */,
 			);
 			name = "Bankey App";
 			packageProductDependencies = (
