@@ -10,13 +10,17 @@ import UIKit
 
 class AccountSummryCell: UITableViewCell {
     let typeLabel = UILabel()
+    let nameLabel = UILabel()
     let underlinedView = UIView()
     
+    let balanceStack = UIStackView()
+    let balanceAmmount = UILabel()
+    let balanceLabel = UILabel()
+    
+    let chevronImageView = UIImageView()
     
     static let reuseID = "AccountSummaryCell"
     static let rowHeight: CGFloat = 100
-    
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,23 +44,66 @@ extension AccountSummryCell {
         underlinedView.translatesAutoresizingMaskIntoConstraints = false
         underlinedView.backgroundColor = appColor
         
+        //name label
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        nameLabel.text = "Account name"
+        
+        //banlance stack
+        balanceStack.translatesAutoresizingMaskIntoConstraints = false
+        balanceStack.axis = .vertical
+        balanceStack.spacing = 0
+        
+        //balacne labels
+        balanceLabel.translatesAutoresizingMaskIntoConstraints = false
+        balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        balanceLabel.textAlignment = .right
+        balanceLabel.text = "Some balance"
+        
+        balanceAmmount.translatesAutoresizingMaskIntoConstraints = false
+        balanceAmmount.font = UIFont.preferredFont(forTextStyle: .body)
+        balanceAmmount.textAlignment = .right
+        balanceAmmount.text = "$920,466.63"
+        
+        //ceveron
+        chevronImageView.translatesAutoresizingMaskIntoConstraints = false
+        chevronImageView.image = UIImage(systemName: "chevron.right")!.withTintColor(appColor, renderingMode: .alwaysOriginal)
+        
         contentView.addSubview(typeLabel)
         contentView.addSubview(underlinedView)
+        contentView.addSubview(nameLabel)
+        contentView.addSubview(chevronImageView)
+        balanceStack.addArrangedSubview(balanceLabel)
+        balanceStack.addArrangedSubview(balanceAmmount)
+        contentView.addSubview(balanceStack)
+        
     }
     
     
     private func layout() {
         NSLayoutConstraint.activate([
             typeLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 2),
-            typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2)
-            ])
-            // undelinedView layout
+            typeLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
             
-            NSLayoutConstraint.activate([
-                underlinedView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
-                underlinedView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
-                underlinedView.heightAnchor.constraint(equalToConstant: 5),
-                underlinedView.widthAnchor.constraint(equalToConstant: 60)
+            // underlined view layout
+            underlinedView.topAnchor.constraint(equalToSystemSpacingBelow: typeLabel.bottomAnchor, multiplier: 1),
+            underlinedView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            underlinedView.heightAnchor.constraint(equalToConstant: 5),
+            underlinedView.widthAnchor.constraint(equalToConstant: 60),
+            
+            //namelable layout
+            nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: underlinedView.bottomAnchor, multiplier: 2),
+            nameLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 2),
+            
+            //balance stack layouts
+            balanceStack.topAnchor.constraint(equalToSystemSpacingBelow: underlinedView.bottomAnchor, multiplier: 0),
+            balanceStack.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 4),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: balanceStack.trailingAnchor, multiplier: 4),
+            
+            //chevron layout
+            chevronImageView.topAnchor.constraint(equalToSystemSpacingBelow: underlinedView.bottomAnchor, multiplier: 1),
+            trailingAnchor.constraint(equalToSystemSpacingAfter: chevronImageView.trailingAnchor, multiplier: 1)
             ])
+        
     }
 }
