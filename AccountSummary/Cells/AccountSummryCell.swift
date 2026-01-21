@@ -9,6 +9,20 @@ import Foundation
 import UIKit
 
 class AccountSummryCell: UITableViewCell {
+    
+    enum AccountType: String  {
+        case Banking
+        case CredintCard
+        case Investment
+    }
+    
+    struct ViewModel {
+        let accountType: AccountType
+        let accountName: String
+    }
+    
+    let viewModel: ViewModel? = nil
+    
     let typeLabel = UILabel()
     let nameLabel = UILabel()
     let underlinedView = UIView()
@@ -63,8 +77,7 @@ extension AccountSummryCell {
         balanceAmmount.translatesAutoresizingMaskIntoConstraints = false
         balanceAmmount.font = UIFont.preferredFont(forTextStyle: .body)
         balanceAmmount.textAlignment = .right
-        balanceAmmount.text = "$920,466.63"
-        
+        balanceAmmount.attributedText = makeFormattedBalance(dollars: "929,466", cents: "63")
         //ceveron
         chevronImageView.translatesAutoresizingMaskIntoConstraints = false
         chevronImageView.image = UIImage(systemName: "chevron.right")!.withTintColor(appColor, renderingMode: .alwaysOriginal)
@@ -120,5 +133,19 @@ extension AccountSummryCell {
         rootString.append(centString)
        
         return rootString
+    }
+}
+extension AccountSummryCell {
+    func configure (with vm: ViewModel) {
+        typeLabel.text = vm.accountType.rawValue
+        nameLabel.text = vm.accountName
+        switch vm.accountType {
+        case .Banking:
+            underlinedView.backgroundColor = appColor
+        case .CredintCard:
+            underlinedView.backgroundColor = .orange
+        case .Investment:
+            underlinedView.backgroundColor = .purple
+        }
     }
 }
