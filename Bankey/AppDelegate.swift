@@ -70,8 +70,6 @@ extension AppDelegate: logoutDelegate {
     }
 }
 
-
-
 extension AppDelegate {
     
     // this function for smooth transition
