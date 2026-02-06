@@ -62,6 +62,7 @@
 		E58BB0EF2F155B4F00BDE2A9 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
 		E58BB0F12F155B9C00BDE2A9 /* AccountSummaryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSummaryHeaderView.xib; sourceTree = "<group>"; };
 		E5A1098C2F02FF000001B088 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		E5F9F1812F283F0A00486240 /* Bankey App.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Bankey App.xctestplan"; sourceTree = "<group>"; };
 		E5FBE5BC2F25BF4A00128E69 /* Bankey UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bankey UnitTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FBE5C92F25BF8100128E69 /* Bankey UnitTests(XCTest).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bankey UnitTests(XCTest).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5FBE5D62F25C02800128E69 /* Bankey UnitTests(XCTest ).xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bankey UnitTests(XCTest ).xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +161,7 @@
 		E534F54D2EF2EC7D004DE185 = {
 			isa = PBXGroup;
 			children = (
+				E5F9F1812F283F0A00486240 /* Bankey App.xctestplan */,
 				E512176D2F1414D800C806A0 /* AccountSummary */,
 				E56146482F1BE97F00D265E1 /* Onboarding */,
 				E534F56E2EF2F09E004DE185 /* Bankey */,
