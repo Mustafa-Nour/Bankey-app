@@ -8,6 +8,7 @@
 import Foundation
 
 // MARK: -  user defaults values which assined in the application database (no sensitive data should put here )
+
 class LocalState {
     private enum keys: String {
         case hasOnboarded

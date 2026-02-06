@@ -51,8 +51,6 @@ extension LoginView {
         passwordTextField.isSecureTextEntry = true
         passwordTextField.delegate = self
        // passwordTextField.layer.cornerRadius = 2
-        
-    
         clipsToBounds = true
    
         
@@ -60,21 +58,16 @@ extension LoginView {
     
     func layout() {
         stackView.addArrangedSubview(usernameTextField)
-        
         stackView.addArrangedSubview(passwordTextField)
         
         addSubview(stackView)
-        
-        
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 1 ),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: leadingAnchor, multiplier: 1),
             trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
             bottomAnchor.constraint(equalToSystemSpacingBelow: stackView.bottomAnchor, multiplier: 1)
         ])
-        
-        
-        
+ 
     }
 }
 

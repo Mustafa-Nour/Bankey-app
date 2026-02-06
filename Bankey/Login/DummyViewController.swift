@@ -37,8 +37,7 @@ extension DummyViewController {
         logOutButton.setTitle("LogOut", for: [])
         logOutButton.configuration = .filled()
         logOutButton.addTarget(self, action: #selector(logOutTapped), for: .primaryActionTriggered)
-        
-        
+
     }
     
     func layout() {
@@ -47,8 +46,7 @@ extension DummyViewController {
         
         view.addSubview(stackView)
         //view.addSubview(logOutButton)
-        
-        
+
         NSLayoutConstraint.activate([
             stackView.centerXAnchor.constraint(equalTo:  view.centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo:  view.centerYAnchor)

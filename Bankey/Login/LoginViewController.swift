@@ -50,8 +50,8 @@ extension LoginViewController {
         titleLabel.text = "Bankey"
         titleLabel.textAlignment = .center
         titleLabel.font = .systemFont(ofSize: 50)
-        
         titleLabel.adjustsFontForContentSizeCategory = true
+        
         //subTitile
         
         subTitleLabel.translatesAutoresizingMaskIntoConstraints = false

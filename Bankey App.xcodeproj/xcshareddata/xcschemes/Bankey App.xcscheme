@@ -27,8 +27,48 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:Bankey App.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E5FBE5BB2F25BF4A00128E69"
+               BuildableName = "Bankey UnitTests.xctest"
+               BlueprintName = "Bankey UnitTests"
+               ReferencedContainer = "container:Bankey App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E5FBE5C82F25BF8100128E69"
+               BuildableName = "Bankey UnitTests(XCTest).xctest"
+               BlueprintName = "Bankey UnitTests(XCTest)"
+               ReferencedContainer = "container:Bankey App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E5FBE5D52F25C02800128E69"
+               BuildableName = "Bankey UnitTests(XCTest ).xctest"
+               BlueprintName = "Bankey UnitTests(XCTest )"
+               ReferencedContainer = "container:Bankey App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
