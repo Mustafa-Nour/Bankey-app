@@ -21,37 +21,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         loginViewController.delegate = self
         onboardingContainer.delegate = self
-        let vc = mainViewController
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        window?.backgroundColor = .systemBackground
-        
-        vc.setStatusBar()
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = appColor
-        appearance.shadowColor = .clear
-        
-        UINavigationBar.appearance().standardAppearance = appearance
-        UINavigationBar.appearance().scrollEdgeAppearance = appearance
-        UINavigationBar.appearance().compactAppearance = appearance
-
-        window?.rootViewController = vc
-        
+       
+        displayLogin()
         return true
     }
+    
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+    
+    private func displayNextScreen() {
+        if LocalState.hasOnboraded {
+            prepMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingContainer)
+        }
+    }
+    
+    private func prepMainView() {
+        mainViewController.setStatusBar()
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().backgroundColor = appColor
+        
+    }
+    
 }
 
 //login delegate
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogin() {
-        loginViewController.SignInButton.configuration?.showsActivityIndicator = false
-        if LocalState.hasOnboraded {
-            setRootViewController(mainViewController)
-            
-        } else  {
-            setRootViewController(onboardingContainer)
-        }
+        displayNextScreen()
     }
 }
 
