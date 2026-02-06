@@ -1,0 +1,46 @@
+{
+  "configurations" : [
+    {
+      "id" : "05F98BA4-EF93-4B7C-A2FD-89CDADE06361",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Bankey App.xcodeproj",
+      "identifier" : "E534F5552EF2EC7D004DE185",
+      "name" : "Bankey App"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Bankey App.xcodeproj",
+        "identifier" : "E5FBE5BB2F25BF4A00128E69",
+        "name" : "Bankey UnitTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Bankey App.xcodeproj",
+        "identifier" : "E5FBE5C82F25BF8100128E69",
+        "name" : "Bankey UnitTests(XCTest)"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Bankey App.xcodeproj",
+        "identifier" : "E5FBE5D52F25C02800128E69",
+        "name" : "Bankey UnitTests(XCTest )"
+      }
+    }
+  ],
+  "version" : 1
+}
