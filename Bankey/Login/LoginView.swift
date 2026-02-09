@@ -45,6 +45,7 @@ extension LoginView {
        // usernameTextField.layer.cornerRadius = 5
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
         passwordTextField.placeholder = "Password"
+        passwordTextField.enablePasswordToggle()
         passwordTextField.text = "Mo"
         
         

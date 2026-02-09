@@ -66,6 +66,7 @@ extension AccountSummryCell {
         //name label
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = UIFont.preferredFont(forTextStyle: .body)
+        nameLabel.adjustsFontSizeToFitWidth = true
         nameLabel.text = "Account name"
         
         //banlance stack
@@ -77,10 +78,13 @@ extension AccountSummryCell {
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.font = UIFont.preferredFont(forTextStyle: .body)
         balanceLabel.textAlignment = .right
+        balanceLabel.adjustsFontSizeToFitWidth = true
         balanceLabel.text = "Some balance"
         
         balanceAmmount.translatesAutoresizingMaskIntoConstraints = false
         balanceAmmount.font = UIFont.preferredFont(forTextStyle: .body)
+        balanceAmmount.adjustsFontSizeToFitWidth = true
+
         balanceAmmount.textAlignment = .right
        // balanceAmmount.attributedText = makeFormattedBalance(dollars: "929,466", cents: "63")
         //ceveron
@@ -125,20 +129,7 @@ extension AccountSummryCell {
         
     }
     
-//    private func makeFormattedBalance(dollars: String, cents: String) -> NSAttributedString {
-//        let dollarSignAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .callout), .baselineOffset: 8]
-//        let dollarAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .title1)]
-//        let centAttributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote),.baselineOffset: 8]
-//        
-//        let rootString = NSMutableAttributedString(string: "$", attributes: dollarSignAttributes)
-//        let dollarString = NSAttributedString(string: dollars, attributes: dollarAttributes)
-//        let centString = NSAttributedString(string: cents, attributes: centAttributes)
-//        
-//        rootString.append(dollarString)
-//        rootString.append(centString)
-//       
-//        return rootString
-//    }
+
 }
 extension AccountSummryCell {
     func configure (with vm: ViewModel) {

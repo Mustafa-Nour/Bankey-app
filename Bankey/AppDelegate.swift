@@ -19,15 +19,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let mainViewController = MainViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
         loginViewController.delegate = self
         onboardingContainer.delegate = self
-       
+        registerTheNotification()
+        print("didopened")
         displayLogin()
         return true
     }
     
     private func displayLogin() {
         setRootViewController(loginViewController)
+    }
+    
+    private func registerTheNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didlogOut), name: .logout, object: nil)
     }
     
     private func displayNextScreen() {
@@ -40,10 +48,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func prepMainView() {
-        mainViewController.setStatusBar()
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().backgroundColor = appColor
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = appColor
         
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
     
 }
@@ -65,7 +75,7 @@ extension AppDelegate: OnboaringContainerControllerDelegate {
 }
 
 extension AppDelegate: logoutDelegate {
-    func didlogOut() {
+    @objc func didlogOut() {
         setRootViewController(loginViewController)
     }
 }

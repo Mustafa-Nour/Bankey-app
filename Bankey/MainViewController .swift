@@ -14,7 +14,7 @@ class MainViewController: UITabBarController {
         setTabBar()
     }
     
-    private  func setupViews() {
+    private func setupViews() {
         let summaryVC = AccountSummaryViewController()
         let monyVC = MoveMonyViewController()
         let moreVC = MoreViewController()
@@ -22,7 +22,6 @@ class MainViewController: UITabBarController {
         summaryVC.setTapBarImage(imageName: "list.dash.header.rectangle", title: "Summary")
         monyVC.setTapBarImage(imageName: "arrow.left.arrow.right", title: "MoveMony")
         moreVC.setTapBarImage(imageName: "ellipsis.circle", title: "More")
-        
         
         let summaryNC = UINavigationController(rootViewController: summaryVC)
         let monyNC = UINavigationController(rootViewController: monyVC)
@@ -36,25 +35,33 @@ class MainViewController: UITabBarController {
     }
     
     private func hideNavigationBarLine(_ navigationBar: UINavigationBar) {
-        let img = UIImage()
-        navigationBar.shadowImage = img
-        navigationBar.setBackgroundImage(img, for: .default)
-        navigationBar.isTranslucent = false
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = appColor
+        appearance.shadowColor = .clear // Hide the shadow line
+        
+        navigationBar.standardAppearance = appearance
+        navigationBar.scrollEdgeAppearance = appearance
+        navigationBar.compactAppearance = appearance // For smaller layouts
     }
     
     private func setTabBar() {
         tabBar.tintColor = appColor
         tabBar.isTranslucent = false
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = appColor
+            appearance.shadowColor = .clear // NO Line
+            
+            tabBar.standardAppearance = appearance
+            tabBar.scrollEdgeAppearance = appearance
+        }
     }
     
     
 }
-
-//class AccountSummaryViewController: UIViewController {
-//    override func viewDidLoad() {
-//        view.backgroundColor = .red
-//    }
-//}
 
 class MoveMonyViewController: UIViewController {
     override func viewDidLoad() {

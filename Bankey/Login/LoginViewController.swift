@@ -36,8 +36,19 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         style()
         layout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Hide tab bar on login screen
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .darkContent
     }
 
 }
@@ -88,15 +99,14 @@ extension LoginViewController {
         
         //title
         NSLayoutConstraint.activate([
-            subTitleLabel.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
+            titleLabel.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-            
-
         ])
         
-        
+        //subtitle
         NSLayoutConstraint.activate([
-            loginView.topAnchor.constraint(equalToSystemSpacingBelow: subTitleLabel.bottomAnchor, multiplier: 3),
+            subTitleLabel.topAnchor.constraint(equalToSystemSpacingBelow: titleLabel.bottomAnchor, multiplier: 3),
+            subTitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             subTitleLabel.widthAnchor.constraint(equalTo: loginView.widthAnchor)
         ])
         
@@ -146,6 +156,7 @@ extension LoginViewController {
             SignInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
         } else {
+            SignInButton.configuration?.showsActivityIndicator = false 
             errorMesageLabel.text = "username / password is incorrect"
         }
     }
