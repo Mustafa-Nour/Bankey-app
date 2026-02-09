@@ -77,6 +77,7 @@ extension AppDelegate: OnboaringContainerControllerDelegate {
 extension AppDelegate: logoutDelegate {
     @objc func didlogOut() {
         setRootViewController(loginViewController)
+        loginViewController.SignInButton.configuration?.showsActivityIndicator = false
     }
 }
 

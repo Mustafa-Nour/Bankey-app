@@ -171,20 +171,29 @@ extension LoginViewController {
         
         if usernameText.isEmpty || passwordText.isEmpty {
             errorMesageLabel.isHidden = false
-            errorMesageLabel.text = "UserName/Passeord should never be empty"
+            configureView(with: "UserName/Passeord should never be empty")
             return
         }
         
-        if usernameText == "Mo" && passwordText == "Mo" {
+        if usernameText == "Hi" && passwordText == "Hi" {
             SignInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogin()
         } else {
-            SignInButton.configuration?.showsActivityIndicator = false 
-            errorMesageLabel.text = "username / password is incorrect"
+            SignInButton.configuration?.showsActivityIndicator = false
+            configureView(with: "UserName/Passeord should never be empty")
+
         }
+    }
+    
+    private func configureView(with message: String) {
+        errorMesageLabel.isHidden = false
+        errorMesageLabel.text = message
+        ShakeAnimation()
     }
 }
 
+
+// MARK: -  Animations 
 extension LoginViewController {
     private func animate(){
         let duration = 2.0
@@ -211,5 +220,17 @@ extension LoginViewController {
             self.view.layoutIfNeeded()
         }
         animator4.startAnimation(afterDelay: 0.2)
+    }
+    
+    private func ShakeAnimation() {
+        let animation = CAKeyframeAnimation()
+        
+        animation.keyPath = "position.x"
+        animation.values = [0, 10 , 10, 0]
+        animation.keyTimes = [0, 0.16 , 0.5, 0.83, 1]
+        animation.duration = 0.4
+        
+        animation.isAdditive = true
+        SignInButton.layer.add(animation, forKey: "Shake")
     }
 }
