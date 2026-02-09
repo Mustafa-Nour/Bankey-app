@@ -19,7 +19,7 @@ class AccountSummaryViewController: UIViewController {
         barButtonItem.tintColor = .label
         return barButtonItem
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
