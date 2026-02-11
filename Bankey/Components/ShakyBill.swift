@@ -10,6 +10,8 @@ import UIKit
 
 class shakeyBellVeiw: UIView {
     let imageView = UIImageView()
+    let notificationButton =  UIButton()
+    let buttonHeight: CGFloat = 16
     
     override init (frame : CGRect) {
         super.init(frame: frame)
@@ -41,16 +43,31 @@ extension shakeyBellVeiw {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         let image = UIImage(systemName: "bell.fill")!.withTintColor(.white, renderingMode: .alwaysOriginal)
         imageView.image = image
+        
+        //notificationButton
+        notificationButton.translatesAutoresizingMaskIntoConstraints = false
+        notificationButton.backgroundColor = .systemRed
+        notificationButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        notificationButton.layer.cornerRadius = buttonHeight/2
+        notificationButton.setTitle("9", for: .normal)
+        notificationButton.setTitleColor(.white, for: .normal)
     }
     
     func layout() {
         addSubview(imageView)
-        
+        addSubview(notificationButton)
         NSLayoutConstraint.activate([
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
         imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
         imageView.heightAnchor.constraint(equalToConstant: 24),
-        imageView.widthAnchor.constraint(equalToConstant: 24)
+        imageView.widthAnchor.constraint(equalToConstant: 24),
+        
+        //notificationButton
+        notificationButton.topAnchor.constraint(equalTo: imageView.topAnchor),
+        notificationButton.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -9),
+        notificationButton.widthAnchor.constraint(equalToConstant: 16),
+        notificationButton.heightAnchor.constraint(equalToConstant: 16)
+        
         ])
     }
          
@@ -99,7 +116,6 @@ extension shakeyBellVeiw {
     }
 }
 
-// https://www.hackingwithswift.com/example-code/calayer/how-to-change-a-views-anchor-point-without-moving-it
 extension UIView {
     func setAnchorPoint(_ point: CGPoint) {
         var newPoint = CGPoint(x: bounds.size.width * point.x, y: bounds.size.height * point.y)
