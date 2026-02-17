@@ -9,8 +9,14 @@ import UIKit
 
 class AccountSummaryHeaderView : UIView {
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dateLAbel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet var ContentView: UIView!
     let shakeyBell = shakeyBellVeiw()
+    
+
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -52,3 +58,15 @@ class AccountSummaryHeaderView : UIView {
         
     }
 }
+
+// MARK: - cell Configuration
+extension AccountSummaryHeaderView {
+    
+    func configure (viewModel : headerViewModel) {
+        welcomeLabel.text = viewModel.welcomeMessage ?? ""
+        nameLabel.text = viewModel.name ?? ""
+        dateLAbel.text = viewModel.dateFormatted
+    }
+
+}
+

@@ -30,6 +30,7 @@ class shakeyBellVeiw: UIView {
     }
 }
 
+                                    // MARK: -  setup and layout
 extension shakeyBellVeiw {
     
     func setup() {
@@ -72,7 +73,8 @@ extension shakeyBellVeiw {
     }
          
 }
-// MARK: - Actions
+
+                            // MARK: - Actions
 extension shakeyBellVeiw {
     @objc func imageViewTapped(_ recognizer: UITapGestureRecognizer) {
         shakeWith(duration: 1.0, angle: .pi/8, yOffset: 0.0)
