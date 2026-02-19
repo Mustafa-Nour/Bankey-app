@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+
+struct Accounts {
+    let accountType: AccountSummryCell.AccountType
+    let accountName: String
+    let balance: Decimal
+    
+    var balanceAsAttributedString: NSAttributedString {
+           return CurrencyFormatter().makeAttributedCurrency(balance)
+       }
+}
