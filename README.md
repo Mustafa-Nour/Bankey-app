@@ -41,23 +41,6 @@ The app follows the **MVVM (Model-View-ViewModel)** pattern to ensure a clean se
 
 ---
 
-## Unit Testing
-
-Tests are written using **XCTestCase** and cover critical networking and data parsing logic.
-
-```swift
-func testCanParse() throws {
-    // Given: a JSON response from the API
-    let result = try! decoder.decode([Account].self, from: data)
-    
-    // Then: the model is correctly parsed
-    XCTAssertEqual(account1.id, "1")
-    XCTAssertEqual(account1.amount, 929466.23)
-    XCTAssertEqual(account1.name, "Basic Savings")
-}
-```
-
----
 
 ## Getting Started
 
