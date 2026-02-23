@@ -62,7 +62,7 @@ class AccountSummaryHeaderView : UIView {
 // MARK: - cell Configuration
 extension AccountSummaryHeaderView {
     
-    func configure (viewModel : headerViewModel) {
+    func configure (viewModel : AccountsModel) {
         welcomeLabel.text = viewModel.welcomeMessage ?? ""
         nameLabel.text = viewModel.name ?? ""
         dateLAbel.text = viewModel.dateFormatted

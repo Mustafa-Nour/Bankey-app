@@ -10,23 +10,12 @@ import UIKit
 
 class AccountSummryCell: UITableViewCell {
     
-    enum AccountType: String  {
+    enum AccountType: String, Codable  {
         case Banking
         case CreditCard
         case Investment
     }
-    
-    struct ViewModel {
-        let accountType: AccountType
-        let accountName: String
-        let balance: Decimal
-        
-        var balanceAsAttributedString: NSAttributedString {
-               return CurrencyFormatter().makeAttributedCurrency(balance)
-           }
-    }
-    
-    let viewModel: ViewModel? = nil
+
     
     let typeLabel = UILabel()
     let nameLabel = UILabel()
@@ -132,7 +121,8 @@ extension AccountSummryCell {
 
 }
 extension AccountSummryCell {
-    func configure (with vm: ViewModel) {
+    
+    func configure (with vm: Accounts) {
         typeLabel.text = vm.accountType.rawValue
         nameLabel.text = vm.accountName
         balanceLabel.attributedText = vm.balanceAsAttributedString

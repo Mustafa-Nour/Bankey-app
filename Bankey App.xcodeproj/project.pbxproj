@@ -18,10 +18,12 @@
 		E561465D2F1BFD9D00D265E1 /* AccountSummryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561465C2F1BFD9D00D265E1 /* AccountSummryCell.swift */; };
 		E563DE8D2F42A83C00B4F1B8 /* AccountSummaryViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = E563DE8C2F42A82D00B4F1B8 /* AccountSummaryViewModel .swift */; };
 		E566B7B12F379F79005561CC /* NSNotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E566B7B02F379F79005561CC /* NSNotificationName.swift */; };
+		E569E4BD2F46E808009A10AA /* MainAccountSummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569E4BC2F46E808009A10AA /* MainAccountSummaryViewModel.swift */; };
 		E56FFC9E2F4399D700FD6F22 /* DateUTIL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E56FFC9D2F4399CD00FD6F22 /* DateUTIL.swift */; };
 		E57E1ECA2F23F4BB006106C7 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57E1EC92F23F4BB006106C7 /* CurrencyFormatter.swift */; };
 		E57E1ECC2F23F53E006106C7 /* Decimal+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57E1ECB2F23F53E006106C7 /* Decimal+utils.swift */; };
 		E58137722F43D8F800579615 /* accountSummary+networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58137712F43D8F800579615 /* accountSummary+networking.swift */; };
+		E58137742F4400AF00579615 /* AccountSummaryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58137732F4400AF00579615 /* AccountSummaryCellViewModel.swift */; };
 		E5860D6E2F3A2CEA00EF4D2A /* UiTextField+scureToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5860D6D2F3A2CC200EF4D2A /* UiTextField+scureToggle.swift */; };
 		E5860D712F3A5DB000EF4D2A /* ShakyBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5860D702F3A5DA100EF4D2A /* ShakyBill.swift */; };
 		E58BB0F02F155B4F00BDE2A9 /* AccountSummaryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58BB0EF2F155B4F00BDE2A9 /* AccountSummaryHeaderView.swift */; };
@@ -65,10 +67,12 @@
 		E561465C2F1BFD9D00D265E1 /* AccountSummryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummryCell.swift; sourceTree = "<group>"; };
 		E563DE8C2F42A82D00B4F1B8 /* AccountSummaryViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSummaryViewModel .swift"; sourceTree = "<group>"; };
 		E566B7B02F379F79005561CC /* NSNotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNotificationName.swift; sourceTree = "<group>"; };
+		E569E4BC2F46E808009A10AA /* MainAccountSummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAccountSummaryViewModel.swift; sourceTree = "<group>"; };
 		E56FFC9D2F4399CD00FD6F22 /* DateUTIL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUTIL.swift; sourceTree = "<group>"; };
 		E57E1EC92F23F4BB006106C7 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		E57E1ECB2F23F53E006106C7 /* Decimal+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decimal+utils.swift"; sourceTree = "<group>"; };
 		E58137712F43D8F800579615 /* accountSummary+networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "accountSummary+networking.swift"; sourceTree = "<group>"; };
+		E58137732F4400AF00579615 /* AccountSummaryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCellViewModel.swift; sourceTree = "<group>"; };
 		E5860D6D2F3A2CC200EF4D2A /* UiTextField+scureToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiTextField+scureToggle.swift"; sourceTree = "<group>"; };
 		E5860D702F3A5DA100EF4D2A /* ShakyBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakyBill.swift; sourceTree = "<group>"; };
 		E58BB0EF2F155B4F00BDE2A9 /* AccountSummaryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryHeaderView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,22 @@
 			);
 			target = E534F5552EF2EC7D004DE185 /* Bankey App */;
 		};
+		E569E4D72F46EB8C009A10AA /* Exceptions for "Bankey UnitTests(XCTest )" folder in "Bankey UnitTests(XCTest )" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AccountSummaryTests/accountTest.swift,
+				AccountSummaryTests/ProfileTests.swift,
+				UTIL/CurrencyFormatterTests.swift,
+			);
+			target = E5FBE5D52F25C02800128E69 /* Bankey UnitTests(XCTest ) */;
+		};
+		E569E4E22F46F44E009A10AA /* Exceptions for "Bankey UnitTests(XCTest )" folder in "Bankey UnitTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AccountSummaryTests/accountTest.swift,
+			);
+			target = E5FBE5BB2F25BF4A00128E69 /* Bankey UnitTests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -104,13 +124,12 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
-		E5FBE5BD2F25BF4A00128E69 /* Bankey UnitTests */ = {
+		E569E4D42F46EB8C009A10AA /* Bankey UnitTests(XCTest ) */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Bankey UnitTests";
-			sourceTree = "<group>";
-		};
-		E5FBE5D72F25C02800128E69 /* Bankey UnitTests(XCTest ) */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				E569E4E22F46F44E009A10AA /* Exceptions for "Bankey UnitTests(XCTest )" folder in "Bankey UnitTests" target */,
+				E569E4D72F46EB8C009A10AA /* Exceptions for "Bankey UnitTests(XCTest )" folder in "Bankey UnitTests(XCTest )" target */,
+			);
 			path = "Bankey UnitTests(XCTest )";
 			sourceTree = "<group>";
 		};
@@ -153,6 +172,8 @@
 			isa = PBXGroup;
 			children = (
 				E512176E2F1414FB00C806A0 /* AccountSummaryViewController.swift */,
+				E569E4BC2F46E808009A10AA /* MainAccountSummaryViewModel.swift */,
+				E58137712F43D8F800579615 /* accountSummary+networking.swift */,
 				E56146582F1BFD5100D265E1 /* Cells */,
 				E56146572F1BFD3600D265E1 /* Header */,
 			);
@@ -180,8 +201,7 @@
 				E512176D2F1414D800C806A0 /* AccountSummary */,
 				E56146482F1BE97F00D265E1 /* Onboarding */,
 				E534F56E2EF2F09E004DE185 /* Bankey */,
-				E5FBE5BD2F25BF4A00128E69 /* Bankey UnitTests */,
-				E5FBE5D72F25C02800128E69 /* Bankey UnitTests(XCTest ) */,
+				E569E4D42F46EB8C009A10AA /* Bankey UnitTests(XCTest ) */,
 				E534F5572EF2EC7D004DE185 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -225,7 +245,6 @@
 			children = (
 				E563DE8C2F42A82D00B4F1B8 /* AccountSummaryViewModel .swift */,
 				E58BB0EF2F155B4F00BDE2A9 /* AccountSummaryHeaderView.swift */,
-				E58137712F43D8F800579615 /* accountSummary+networking.swift */,
 				E58BB0F12F155B9C00BDE2A9 /* AccountSummaryHeaderView.xib */,
 			);
 			path = Header;
@@ -235,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				E561465C2F1BFD9D00D265E1 /* AccountSummryCell.swift */,
+				E58137732F4400AF00579615 /* AccountSummaryCellViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -288,7 +308,7 @@
 				E5FBE5C12F25BF4A00128E69 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				E5FBE5BD2F25BF4A00128E69 /* Bankey UnitTests */,
+				E569E4D42F46EB8C009A10AA /* Bankey UnitTests(XCTest ) */,
 			);
 			name = "Bankey UnitTests";
 			packageProductDependencies = (
@@ -329,9 +349,6 @@
 			);
 			dependencies = (
 				E5FBE5DB2F25C02800128E69 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E5FBE5D72F25C02800128E69 /* Bankey UnitTests(XCTest ) */,
 			);
 			name = "Bankey UnitTests(XCTest )";
 			packageProductDependencies = (
@@ -436,7 +453,9 @@
 				E504EF582F124EBA002F8591 /* AppDelegate.swift in Sources */,
 				E57E1ECA2F23F4BB006106C7 /* CurrencyFormatter.swift in Sources */,
 				E57E1ECC2F23F53E006106C7 /* Decimal+utils.swift in Sources */,
+				E58137742F4400AF00579615 /* AccountSummaryCellViewModel.swift in Sources */,
 				E58BB0F02F155B4F00BDE2A9 /* AccountSummaryHeaderView.swift in Sources */,
+				E569E4BD2F46E808009A10AA /* MainAccountSummaryViewModel.swift in Sources */,
 				E566B7B12F379F79005561CC /* NSNotificationName.swift in Sources */,
 				E504EF5D2F1251DA002F8591 /* UIViewController+utills.swift in Sources */,
 				E5A1098D2F02FF000001B088 /* DummyViewController.swift in Sources */,

@@ -6,7 +6,7 @@
 //
 import Foundation
 
-struct headerViewModel {
+struct AccountsModel {
     let welcomeMessage: String?
     let name: String?
     let date: Date

@@ -9,43 +9,61 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
-    //model
-    var profile: Profile?
-    //viewmodel
-    var headerViewmodel = headerViewModel(welcomeMessage: "welcome", name: "", date: Date())
-    
+    // ViewModel
+    var viewModel = MainAccountSummaryViewModel()
     
     var headerView = AccountSummaryHeaderView(frame: .zero)
-    
-    var accountSummaryCellViewModel: [AccountSummryCell.ViewModel] = []
-    var accounts: [AccountSummryCell.ViewModel] = []
-    
     var tableView = UITableView()
+    let refreshControl = UIRefreshControl()
     
-    // MARK: -  lazy var means that he will instantiated as soon as the vc is created
-    
-   lazy var logoutBarButton: UIBarButtonItem  = {
+    lazy var logoutBarButton: UIBarButtonItem  = {
         let barButtonItem =  UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
         barButtonItem.tintColor = .label
         return barButtonItem
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         setupNavigationBar()
+        //binding viewModel
+        bindViewModel()
+        setupRefreshControl()
+        viewModel.fetchData()
     }
     
     func setupNavigationBar() {
         navigationItem.rightBarButtonItem = logoutBarButton
     }
+    
+    private func bindViewModel() {
+        viewModel.reloadView = { [weak self] in
+            self?.ConfigureHeader()
+            self?.tableView.reloadData()
+        }
+        
+        viewModel.showError = { error in
+            print("Error: \(error)")
+            // Future: Show alert to user
+        }
+    }
+    
+    private func ConfigureHeader() {
+        headerView.configure(viewModel: viewModel.headerViewModel)
+    }
+    func setupRefreshControl() {
+        refreshControl.tintColor = appColor
+        refreshControl.addTarget(self , action: #selector(refreshContent), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
 }
 
 extension AccountSummaryViewController {
+    
+    
     private func setup() {
         setupTableView()
         setupTableViewHeader()
-        fetchDataAndLoadViews()
     }
     
     private func setupTableView() {
@@ -53,12 +71,11 @@ extension AccountSummaryViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        // MARK: - registering our tableView cell into the view controller
         tableView.register(AccountSummryCell.self, forCellReuseIdentifier: AccountSummryCell.reuseID)
         tableView.rowHeight =  AccountSummryCell.rowHeight
         tableView.tableFooterView = UIView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-
+        
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
@@ -69,69 +86,43 @@ extension AccountSummaryViewController {
         ])
     }
     
-    
     private func setupTableViewHeader() {
-        
         var size = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         size.width = UIScreen.main.bounds.width
         headerView.frame.size = size
         tableView.tableHeaderView = headerView
     }
-    
 }
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        // MARK: - Guard to avoid force unwrap the reusable cell
-        guard !accounts.isEmpty else { return UITableViewCell() }
+        guard !viewModel.accountSummaryCellViewModels.isEmpty else { return UITableViewCell() }
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummryCell.reuseID, for: indexPath) as! AccountSummryCell
         
-        let account = accounts[indexPath.row]
-        cell.configure(with: account)
-        
+        let vm = viewModel.accountSummaryCellViewModels[indexPath.row]
+        cell.configure(with: vm)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return accounts.count
+        return viewModel.accountSummaryCellViewModels.count
     }
 }
 
 extension AccountSummaryViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { }
 }
 
+// MARK: - Actions
 extension AccountSummaryViewController {
-    
-    private func fetchDataAndLoadViews() {
-        fetchProfile(forUserId: "1") { result in
-            switch result {
-            case .success(let profile) :
-                self.profile = profile
-                self.ConfigureHeader(with: profile)
-                self.tableView.reloadData()
-                
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
-    
-    private func ConfigureHeader(with profile : Profile) {
-        let vm = headerViewModel(welcomeMessage: "GoodMorning",
-                                                    name: profile.firstName,
-                                                    date: Date())
-        headerView.configure(viewModel: vm)
-    }
-}
-
-// MARK: -  Actions
-
-extension AccountSummaryViewController {
-    @objc func logoutTapped(sender: UIButton) {
+    @objc func logoutTapped(sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: .logout, object: nil)
     }
+    
+    @objc func refreshContent() {
+        viewModel.fetchData()
+        self.tableView.refreshControl?.endRefreshing() 
+    }
 }
+
+
